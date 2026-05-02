@@ -7,9 +7,11 @@ class BasePage:
     LOGOUT_BUTTON = ("xpath", "//button[@id='logout']")
     LOGO = ("xpath", "//a[@id='logo']")
 
+    PAGE_URL = None
+
     # Тут создаются объекты, которые будут доступны в pages
     def __init__(self, driver):
-        self.driver = driver
+        self.driver: WebDriver = driver
         # Здесь может быть остальной код
 
     # Данный метод будет вызываться для любой страницы, принимая её PAGE_URL
