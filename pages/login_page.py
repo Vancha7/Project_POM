@@ -1,4 +1,4 @@
-from pages.base_page import BasePage  # импорт BasePage в данный класс LoginPage
+from base.base_page import BasePage  # импорт BasePage в данный класс LoginPage
 
 # Класс страницы
 class LoginPage(BasePage):  # Наследование от BasePage

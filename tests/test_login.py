@@ -1,13 +1,9 @@
-import pytest
-from pages.login_page import LoginPage
 import time
 
+from base.base_test import BaseTest
 
-class TestLoginPage:
 
-    @pytest.fixture(autouse=True)
-    def setup(self, driver):
-        self.login_page = LoginPage(driver)
+class TestLoginPage(BaseTest):
 
     def test_login_in_account(self):
         self.login_page.open()
@@ -15,3 +11,5 @@ class TestLoginPage:
         self.login_page.enter_password()
         self.login_page.enter_login_button()
         time.sleep(5)
+        self.dashboard_page.click_invite_button()
+        time.sleep(3)
