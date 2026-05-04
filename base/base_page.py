@@ -1,5 +1,5 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
-
+import allure
 
 class BasePage:
 
@@ -15,8 +15,10 @@ class BasePage:
         # Здесь может быть остальной код
 
     # Данный метод будет вызываться для любой страницы, принимая её PAGE_URL
+    @allure.step("Open PAGE")
     def open(self):
-        self.driver.get(self.PAGE_URL)
+        with allure.step(F"Open {self.PAGE_URL} PAGE"):
+          self.driver.get(self.PAGE_URL)
 
     # Ниже описываются общие для всех страниц методы
     def click_logout_button(self):
